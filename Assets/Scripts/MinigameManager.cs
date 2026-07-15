@@ -1,16 +1,28 @@
+using System;
 using UnityEngine;
 
 public class MinigameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public event Action<bool> OnGameFinished;
+    private bool isGameActive = false;
+
+    public void StartGame()
     {
-        
+        isGameActive = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (!isGameActive) return;
+    }
+
+    private bool CheckWinCondition()
+    {
+        return false;
+    }
+
+    private void EndGame(bool isWin)
+    {
+
     }
 }
